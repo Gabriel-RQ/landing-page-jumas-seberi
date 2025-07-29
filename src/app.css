@@ -1,1 +1,137 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+  --color-jumas-blue: #2d3e73;
+  --color-jumas-red: #ee3632;
+  --color-jumas-green: #228d43;
+  --color-jumas-yellow: #eeba32;
+  --color-jumas-white: #fefefe;
+}
+
+:root {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@layer components {
+  .column-system {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding-block: 1.25rem;
+    padding-inline: 1rem;
+
+    @variant md {
+      grid-template-columns: repeat(8, 1fr);
+      gap: 1.5rem;
+      padding: 2.5rem;
+    }
+
+    @variant lg {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+      padding-inline: 5rem;
+    }
+  }
+
+  .main-title,
+  .quotation {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  .main-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 2.875rem;
+
+    @variant md {
+      font-size: 4rem;
+      line-height: 5.375rem;
+    }
+  }
+
+  .quotation {
+    font-size: 2rem;
+    font-weight: 400;
+
+    @variant md {
+      font-size: 2.5rem;
+    }
+
+    @variant lg {
+      font-size: 3rem;
+    }
+  }
+
+  .section-title,
+  .section-subtitle {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 2.25rem;
+
+    @variant md {
+      font-size: 3rem;
+      line-height: 3.25rem;
+    }
+
+    @variant lg {
+      font-size: 4rem;
+      line-height: 4.25rem;
+    }
+  }
+
+  .section-subtitle {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.75rem;
+
+    @variant md {
+      font-size: 2rem;
+      line-height: 2.375rem;
+    }
+
+    @variant lg {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  .section-content {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    font-style: normal;
+    line-height: 1.5rem;
+
+    @variant md {
+      font-size: 2rem;
+      line-height: 2.375rem;
+    }
+  }
+
+  .cursive-disclaimer {
+    font-family: "Playwrite US Trad", cursive;
+    font-optical-sizing: auto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+
+    @variant md {
+      font-size: 1.25rem;
+    }
+
+    @variant lg {
+    }
+  }
+}
