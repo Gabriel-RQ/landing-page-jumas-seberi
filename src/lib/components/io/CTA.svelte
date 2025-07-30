@@ -10,7 +10,7 @@
 
 <a
   {href}
-  class="rounded-full bg-jumas-yellow text-jumas-blue font-semibold text-3xl flex content-center size-fit px-2 py-3 {className}"
+  class="rounded-full bg-jumas-yellow text-jumas-blue font-semibold text-2xl md:text-3xl inline-block text-center size-fit px-2 md:px-12 md:py-6 py-3 shadow {className}"
 >
   {text}
 </a>
