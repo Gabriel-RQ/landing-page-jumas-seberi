@@ -18,7 +18,7 @@
 >
   {text}
 
-  <span class="*:size-6">
+  <span class="*:size-6 my-auto">
     {#if type === "external"}
       <ExternalLinkIcon />
     {:else}

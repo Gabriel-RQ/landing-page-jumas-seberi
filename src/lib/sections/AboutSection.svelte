@@ -6,9 +6,9 @@
   id="sobre"
   class="column-system bg-jumas-red grid-rows-[auto_1fr] relative z-1 overflow-hidden"
 >
-  <h2 class="col-span-full section-title">Saiba mais sobre nosso movimento</h2>
+  <h2 class="section-title">Saiba mais sobre nosso movimento</h2>
 
-  <div class="col-span-full lg:col-span-8 space-y-8 mt-9">
+  <div class="col-span-full lg:col-span-8 space-y-8 mt-5">
     <img
       src="/img/kentenich.webp"
       alt=""

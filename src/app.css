@@ -83,15 +83,18 @@
     font-size: 2rem;
     font-style: normal;
     font-weight: 900;
+    grid-column: 1 / -1;
     line-height: 2.25rem;
 
     @variant md {
       font-size: 3rem;
+      grid-column: span 7 / span 7;
       line-height: 3.25rem;
     }
 
     @variant lg {
       font-size: 4rem;
+      grid-column: span 8 / span 8;
       line-height: 4.25rem;
     }
   }
