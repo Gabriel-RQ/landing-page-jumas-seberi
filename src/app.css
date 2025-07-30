@@ -6,6 +6,8 @@
   --color-jumas-green: #228d43;
   --color-jumas-yellow: #eeba32;
   --color-jumas-white: #fefefe;
+  --color-glass-dark: rgba(35, 35, 35, 0.25);
+  --color-glass-stroke: rgba(54, 54, 54, 0.15);
   --font-montserrat: "Montserrat", sans-serif;
 }
 
@@ -114,7 +116,7 @@
   .section-content {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-style: normal;
     line-height: 1.5rem;
 
