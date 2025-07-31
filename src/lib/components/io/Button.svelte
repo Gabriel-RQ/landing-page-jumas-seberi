@@ -20,7 +20,7 @@
   {onclick}
   class="{variant === 'blue'
     ? 'bg-jumas-blue'
-    : 'bg-jumas-yellow'} px-12 py-6 rounded-lg font-semibold {className}"
+    : 'bg-jumas-yellow text-jumas-blue'} px-12 py-6 rounded-lg font-semibold {className}"
 >
   {@render children()}
 </button>

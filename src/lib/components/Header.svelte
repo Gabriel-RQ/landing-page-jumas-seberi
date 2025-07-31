@@ -94,7 +94,7 @@
     class="md:gap-12 justify-self-end self-start md:flex md:self-auto md:items-center"
   >
     <CTA
-      href="/"
+      href="/faca-parte"
       text="Quero participar"
       class="text-base! hidden! md:inline-block! px-2! py-3!"
     />
