@@ -32,8 +32,10 @@
     mask-image: linear-gradient(180deg, transparent 25%, black);
     position: absolute;
     z-index: -10;
+  }
 
-    @media screen and (width >= 48rem) {
+  @media screen and (width >= 64rem) {
+    section::before {
       background-size: 100% 80%;
     }
   }
