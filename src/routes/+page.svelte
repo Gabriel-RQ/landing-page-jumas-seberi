@@ -1,4 +1,5 @@
 <script>
+  import { Header } from "$lib/components";
   import {
     MainSection,
     AboutSection,
@@ -7,7 +8,15 @@
   } from "$lib/sections";
 </script>
 
-<MainSection />
-<AboutSection />
-<ActivitiesSection />
-<ContactSection />
+<Header />
+
+<main>
+  <MainSection />
+  <AboutSection />
+  <ActivitiesSection />
+  <ContactSection />
+</main>
+
+<footer class="text-jumas-blue font-montserrat bg-jumas-yellow text-center p-4">
+  <p>&copy; Jumas Seberi 2025</p>
+</footer>
