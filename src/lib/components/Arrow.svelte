@@ -1,12 +1,24 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
 
+  type ArrowSvgProps = {
+    class?: string;
+    width?: number;
+    height?: number;
+  };
+
   type ArrowProps = {
     height?: number;
     width?: number;
     class?: string;
     arrow?: Snippet<
-      [{ class?: string; svg?: Snippet; width?: number; height?: number }]
+      [
+        {
+          svg?: Snippet<[props: ArrowSvgProps]>;
+          width?: number;
+          height?: number;
+        },
+      ]
     >;
     text?: string;
     textPosition?: "left" | "right" | "top" | "bottom";
@@ -29,10 +41,10 @@
   };
 </script>
 
-{#snippet ArrowSvg()}
+{#snippet ArrowSvg({ class: className, ...restProps }: ArrowSvgProps)}
   <svg
-    {width}
-    {height}
+    {...restProps}
+    class={className}
     viewBox="0 0 48 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +60,9 @@
   class="w-max flex {[flexDirectionMap[textPosition]]} items-center {className}"
 >
   {#if arrow}
-    {@render arrow({ class: className, height, width, svg: ArrowSvg })}
+    {@render arrow({ height, width, svg: ArrowSvg })}
   {:else}
-    {@render ArrowSvg()}
+    {@render ArrowSvg({ width, height })}
   {/if}
   <span class="cursive-disclaimer">{text}</span>
 </div>

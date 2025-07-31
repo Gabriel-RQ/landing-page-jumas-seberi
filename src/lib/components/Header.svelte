@@ -78,7 +78,7 @@
 
 <header
   class="fixed w-full px-4 md:px-10 lg:px-20 pt-5 md:pt-10 lg:grid lg:grid-cols-[1fr_2fr_1fr] flex justify-between items-center z-10 {showBackground
-    ? 'bg-black/15'
+    ? 'bg-black/25'
     : ''}"
 >
   <ColorBand />
