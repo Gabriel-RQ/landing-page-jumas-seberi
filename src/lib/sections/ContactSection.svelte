@@ -1,5 +1,5 @@
 <script>
-  import { Button, Input, TextArea } from "$lib/components";
+  import { Arrow, Button, Input, TextArea } from "$lib/components";
 </script>
 
 <section
@@ -11,18 +11,20 @@
     Interessado em participar? Quer tirar uma dúvida? Fale conosco.
   </h3>
 
-  <form class="col-span-full space-y-4">
+  <form class="col-span-full lg:col-span-5 space-y-4 lg:mt-14">
     <Input label="Seu email" type="email" />
     <TextArea label="Sua mensagem" />
     <Button class="w-full">Enviar</Button>
   </form>
 
-  <address class="col-span-full space-y-3">
+  <address
+    class="col-span-full lg:col-span-6 lg:col-start-7 space-y-3 lg:mt-14"
+  >
     <p class="font-bold">Informações de contato da paróquia</p>
     <p>Endereço: Tv. Cel. Andrade Neves, 82 - Centro, Seberi - RS, 98380-000</p>
     <p>Telefone: (55) 3746-1166</p>
 
-    <div class="w-full h-50 rounded-lg overflow-hidden shadow">
+    <div class="w-full h-50 md:h-80 rounded-lg overflow-hidden shadow">
       <iframe
         class="size-full"
         title="Posição da Paróquia Nossa Senhora da Paz em Seberi, no mapa"
@@ -35,31 +37,38 @@
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </div>
-  </address>
 
-  <div class="col-span-full space-y-3 text-center">
-    <p class="text-xl">Nossas redes sociais</p>
+    <div class="space-y-3 text-center lg:text-left">
+      <p class="text-xl">Nossas redes sociais</p>
 
-    <div class="inline-flex gap-6">
-      <a
-        href="https://www.instagram.com/jumasseberi/"
-        aria-label="Logo do Instagram"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <i id="instagram-logo"></i>
-      </a>
+      <div class="inline-flex gap-6">
+        <a
+          href="https://www.instagram.com/jumasseberi/"
+          aria-label="Logo do Instagram"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i id="instagram-logo"></i>
+        </a>
 
-      <a
-        href="https://www.facebook.com/jumas.seberi/"
-        aria-label="Logo do Facebook"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <i id="facebook-logo"></i>
-      </a>
+        <a
+          href="https://www.facebook.com/jumas.seberi/"
+          aria-label="Logo do Facebook"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i id="facebook-logo"></i>
+        </a>
+      </div>
+
+      <Arrow
+        width={48}
+        height={48}
+        text="Nos siga"
+        class="relative left-1/2 lg:left-18"
+      />
     </div>
-  </div>
+  </address>
 
   <p class="text-jumas-blue font-montserrat text-center col-span-full">
     Hier bin Ich!
