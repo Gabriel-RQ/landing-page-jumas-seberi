@@ -20,6 +20,10 @@
   scroll-behavior: smooth;
 }
 
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
 @layer components {
   .column-system {
     display: grid;
