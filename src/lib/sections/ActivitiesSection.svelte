@@ -34,7 +34,7 @@
   <div
     class="col-span-full md:col-span-4 md:col-start-3 lg:col-span-3 lg:col-start-1"
   >
-    <Link text="Venha fazer parte!" type="internal" href="/" />
+    <Link text="Venha fazer parte!" type="internal" href="/faca-parte" />
   </div>
 
   <div class="col-span-full m-auto lg:col-span-5 lg:col-start-7">
