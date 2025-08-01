@@ -3,7 +3,7 @@
   import { type Snippet } from "svelte";
   import { slide } from "svelte/transition";
   import { sineInOut } from "svelte/easing";
-  import { ColorBand } from ".";
+  import { ColorBand, CTA } from ".";
 
   type HamburgerMenuProps = {
     open?: boolean;
@@ -22,7 +22,7 @@
 
 {#if open}
   <div
-    class="fixed bg-jumas-blue inset-0 column-system grid-rows-[auto_1fr]"
+    class="fixed bg-jumas-blue inset-0 column-system grid-rows-[auto_1fr_auto]"
     transition:slide={{ axis: "x", duration: 250, easing: sineInOut }}
   >
     <ColorBand />
@@ -38,5 +38,11 @@
         {@render navList({ onclick: () => (open = false) })}
       </ul>
     </nav>
+
+    <CTA
+      href="/faca-parte"
+      text="Quero participar"
+      class="text-base! col-span-full md:col-span-4 md:col-start-3 w-full"
+    />
   </div>
 {/if}
