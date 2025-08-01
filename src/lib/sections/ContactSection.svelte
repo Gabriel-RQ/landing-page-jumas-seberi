@@ -1,5 +1,51 @@
-<script>
+<script lang="ts">
+  import {
+    PUBLIC_EMAILJS_KEY,
+    PUBLIC_EMAILJS_SERVICE_ID,
+    PUBLIC_EMAILJS_TEMPLATE_ID,
+  } from "$env/static/public";
   import { Arrow, Button, Input, TextArea } from "$lib/components";
+  import emailjs from "@emailjs/browser";
+  import { AlertTriangleIcon, CheckIcon } from "@lucide/svelte";
+  import { scale } from "svelte/transition";
+
+  let emailStatus = $state({
+    show: false,
+    success: false,
+  });
+
+  $effect(() => {
+    if (emailStatus.show) {
+      setTimeout(() => (emailStatus.show = false), 5_000);
+    }
+  });
+
+  function sendEmail(
+    event: SubmitEvent & {
+      currentTarget: EventTarget & HTMLFormElement;
+    }
+  ) {
+    event.preventDefault();
+    emailjs
+      .sendForm(
+        PUBLIC_EMAILJS_SERVICE_ID,
+        PUBLIC_EMAILJS_TEMPLATE_ID,
+        event.currentTarget,
+        {
+          publicKey: PUBLIC_EMAILJS_KEY,
+        }
+      )
+      .then(() => {
+        emailStatus.show = true;
+        emailStatus.success = true;
+      })
+      .catch((error) => {
+        emailStatus.show = true;
+        emailStatus.success = false;
+        console.error(error);
+      });
+    event.currentTarget.reset();
+  }
 </script>
 
 <section
@@ -11,10 +57,34 @@
     Interessado em participar? Quer tirar uma dúvida? Fale conosco.
   </h3>
 
-  <form class="col-span-full lg:col-span-5 space-y-4 lg:mt-14">
-    <Input label="Seu email" type="email" />
-    <TextArea label="Sua mensagem" />
-    <Button class="w-full">Enviar</Button>
+  <form
+    class="col-span-full lg:col-span-5 space-y-4 lg:mt-14"
+    onsubmit={sendEmail}
+    method="POST"
+  >
+    <Input label="Seu email" name="email" type="email" required />
+    <TextArea label="Sua mensagem" name="message" required />
+    <Button class="w-full" type="submit">Enviar</Button>
+
+    {#if emailStatus.show}
+      <span
+        class="font-medium px-2 py-4 w-full inline-flex justify-center items-center gap-4 rounded-lg {emailStatus.success
+          ? 'bg-jumas-green'
+          : 'bg-jumas-red'}"
+        transition:scale
+        class:text-green-50={emailStatus.success}
+        class:text-red-50={!emailStatus.success}
+      >
+        {#if emailStatus.success}
+          <CheckIcon class="size-9 stroke-current" />
+        {:else}
+          <AlertTriangleIcon class="size-9 stroke-current" />
+        {/if}
+        {emailStatus.success
+          ? "Mensagem enviada com sucesso!"
+          : "Erro ao enviar mensagem"}
+      </span>
+    {/if}
   </form>
 
   <address
