@@ -1,7 +1,19 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import { Button, ColorBand, Input, Logo } from "$lib/components";
+  import { sendEmail } from "$lib";
+  import {
+    Button,
+    ColorBand,
+    EmailStatusAlert,
+    Input,
+    Logo,
+  } from "$lib/components";
   import { ArrowLeftIcon } from "@lucide/svelte";
+
+  let emailStatus = $state({
+    show: false,
+    success: false,
+  });
 </script>
 
 <section class="column-system bg-jumas-blue grid-rows-[auto_1fr_auto] relative">
@@ -22,10 +34,17 @@
       Faça parte do Jumas Seberi
     </h2>
 
-    <form class="row-2 col-span-full *:w-full space-y-4">
-      <Input label="Seu nome" />
-      <Input label="Seu número de telefone" type="tel" />
-      <Button variant="yellow" class="mt-4">Quero participar</Button>
+    <form
+      class="row-2 col-span-full *:w-full space-y-4"
+      onsubmit={(e) => sendEmail(e, "subscription", emailStatus)}
+    >
+      <Input label="Seu nome" name="name" required minlength={3} />
+      <Input label="Seu número de telefone" name="phone" type="tel" required />
+      <Button variant="yellow" class="mt-4" type="submit"
+        >Quero participar</Button
+      >
+
+      <EmailStatusAlert {...emailStatus} />
     </form>
   </div>
 
